@@ -1,0 +1,212 @@
+.app__skills {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.app__skills-container {
+  width: 80%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.app__skills-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 5rem;
+  @media screen and (max-width: 1050px) {
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.app__skills-item {
+  flex-direction: column;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+
+  div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+    img {
+      width: 50%;
+      height: 50%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  @media screen and (min-width: 2000px) {
+    margin: 1rem 2rem;
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.app__skills-exp {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @media screen and (max-width: 1050px) {
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+.app__skills-exp-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 0;
+
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+}
+
+.app__skills-exp-works {
+  flex: 1;
+  width: 75%;
+  .app__skills-exp-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-left: 2px solid var(--gray-color);
+
+    // @media only screen and (max-width: 900px) {
+    //   justify-content: flex-start;
+    //   align-items: flex-start;
+    // }
+
+    h4 {
+      font-weight: 500;
+    }
+
+    p {
+      font-weight: 400;
+      margin-top: 5px;
+      color: var(--gray-color);
+    }
+
+    @media screen and (max-width: 550px) {
+      margin-top: 1rem;
+      border-left: 0;
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-bottom: 1rem;
+        background-color: var(--gray-color);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.app__skills-exp-year {
+  width: 25%;
+  margin-right: 3rem;
+
+  p {
+    font-weight: 800;
+    color: var(--secondary-color);
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 1.5rem;
+  }
+
+  @media screen and (max-width: 1050px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 40%;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-right: 1rem;
+  }
+}
+
+.skills-tooltip {
+  max-width: 300px !important;
+  background-color: var(--white-color) !important;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px !important;
+  padding: 1rem !important;
+  color: var(--gray-color) !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem !important;
+    max-width: 500px !important;
+    line-height: 2 !important;
+  }
+}
