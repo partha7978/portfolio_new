@@ -15,4 +15,4 @@
     <li>React Icons</li>
 </ul>
 
-### Copyright (c) 2023 <a href="#" target="_self">Pabitra</a>
+### Copyright (c) 2023 <a href="#" target="_self">Partha</a>
