@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -100,10 +101,16 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>
-                {work.description}
+              <p 
+              className="p-text" 
+              style={{ marginTop: 10 }}
+              data-tooltip-id="my-tooltip__work-description"
+              data-tooltip-content={work.description}
+              data-tooltip-place="bottom"
+              >
+                {work.description.split("").splice(0, 70).join("")}...
               </p>
-
+              <ReactTooltip className="skills-tooltip" id="my-tooltip__work-description" />
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
