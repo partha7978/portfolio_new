@@ -164,7 +164,7 @@
   z-index: 12;
   bottom: 0;
   left: 0;
-
+  
   .menubar__icon {
     display: flex;
     justify-content: center;
@@ -174,10 +174,15 @@
     svg {
       width: 1.5rem;
       height: 1.5rem;
+
+      @media screen and (max-width: 500px) {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
     }
   }
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 600px) {
     display: none;
   }
 }
