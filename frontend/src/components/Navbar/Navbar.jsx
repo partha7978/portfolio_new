@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { HiMenuAlt4, HiX, HiOutlineHome } from "react-icons/hi";
+import { HiOutlineHome } from "react-icons/hi";
 import { MdOutlineContactMail, MdWorkOutline } from "react-icons/md";
-import { GoCommandPalette } from "react-icons/go";
+import { BsCodeSlash } from "react-icons/bs";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
 
@@ -53,22 +53,31 @@ const Navbar = () => {
       </nav>
 
       <nav className="app__navbar-menu">
-          <div className="menubar__icon">
+        <div className="menubar__icon">
+          <a href="#home">
             <HiOutlineHome />
-            <span className="menubar__text">Menu</span>
-          </div>
-          <div className="menubar__icon">
+          </a>
+
+          <span className="menubar__text">Menu</span>
+        </div>
+        <div className="menubar__icon">
+          <a href="#project">
             <MdWorkOutline />
-            <span className="menubar__text">Work</span>
-          </div>
-          <div className="menubar__icon">
-            <GoCommandPalette />
-            <span className="menubar__text">Skill</span>
-          </div>
-          <div className="menubar__icon">
-            <MdOutlineContactMail/>
-            <span className="menubar__text">Contact</span>
-          </div>
+          </a>
+          <span className="menubar__text">Work</span>
+        </div>
+        <div className="menubar__icon">
+          <a href="#skills">
+            <BsCodeSlash />
+          </a>
+          <span className="menubar__text">Skill</span>
+        </div>
+        <div className="menubar__icon">
+          <a href="#contact">
+            <MdOutlineContactMail />
+          </a>
+          <span className="menubar__text">Contact</span>
+        </div>
       </nav>
     </>
   );
