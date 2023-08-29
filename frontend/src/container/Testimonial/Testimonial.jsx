@@ -12,14 +12,16 @@ const Testimonial = () => {
 
   const handleClick = (index) => {
     setCurrentIndex(index);
-  }
+    document
+      .getElementById("app-testimonial")
+      ?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+  };
 
   useEffect(() => {
     const brandsQuery = '*[_type == "brands"]';
     const query = '*[_type == "testimonial"]';
     client.fetch(query).then((data) => {
       setTestimonial(data);
-      console.log(testimonial, "testimonial")
     });
     client.fetch(brandsQuery).then((data) => {
       setBrands(data);
@@ -31,7 +33,10 @@ const Testimonial = () => {
     <>
       {testimonial.length && (
         <>
-          <div className="app__testimonial-item app__flex">
+          <div
+            className="app__testimonial-item app__flex"
+            id="app-testimonial"
+          >
             <img src={urlFor(test.imageurl)} alt="testimonial" />
             <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
@@ -43,10 +48,24 @@ const Testimonial = () => {
           </div>
 
           <div className="app__testimonial-btn app__flex">
-            <div className="app__flex" onClick = {() => handleClick(currentIndex === 0 ? testimonial.length -1 : currentIndex - 1)}>
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === 0 ? testimonial.length - 1 : currentIndex - 1
+                )
+              }
+            >
               <HiChevronLeft />
             </div>
-            <div className="app__flex" onClick = {() => handleClick(currentIndex === testimonial.length - 1 ? 0 : currentIndex + 1)}>
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === testimonial.length - 1 ? 0 : currentIndex + 1
+                )
+              }
+            >
               <HiChevronRight />
             </div>
           </div>
