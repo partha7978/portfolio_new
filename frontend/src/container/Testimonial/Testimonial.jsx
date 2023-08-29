@@ -8,7 +8,7 @@ import { urlFor, client } from "../../client";
 const Testimonial = () => {
   const [brands, setBrands] = useState([]);
   const [testimonial, setTestimonial] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
@@ -19,6 +19,7 @@ const Testimonial = () => {
     const query = '*[_type == "testimonial"]';
     client.fetch(query).then((data) => {
       setTestimonial(data);
+      console.log(testimonial, "testimonial")
     });
     client.fetch(brandsQuery).then((data) => {
       setBrands(data);

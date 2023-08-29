@@ -24,7 +24,7 @@
         padding: 1rem;
         border-radius: 10px;
         cursor: pointer;
-        background-color: #fef4f5;
+        background-color: #E0E4F5;
         transition: all 0.3s ease-in-out;   
 
         img {
@@ -44,7 +44,7 @@
         }
 
         &:hover {
-            background-color: 0 0 25px #fef4f5;
+            box-shadow: 0 0 25px #fef4f5;
         }
 
         @media screen and (max-width: 600px) {
@@ -60,7 +60,7 @@
 }
 
 .app__footer-cards .app__footer-card:last-child {
-    background-color: #f2f7fb;
+    background-color: #E8D9E2;
 }
 
 .app__footer-form {
