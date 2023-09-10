@@ -25,3 +25,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* SCROLL BAR STARTS */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #f9f2ed;
+}
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  /* background: -webkit-linear-gradient(315deg, #A88BEB, #F8CEEC, #A88BEB); */
+  background: rgba(49, 59, 172, 0.85);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: -webkit-linear-gradient(315deg, #A88BEB, #F8CEEC, #A88BEB); */
+  background: rgba(49, 59, 172, 1);
+}
+/* SCROLL BAR ENDS */

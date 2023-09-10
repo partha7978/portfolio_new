@@ -14,7 +14,7 @@ const Testimonial = () => {
     setCurrentIndex(index);
     document
       .getElementById("app-testimonial")
-      ?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+      ?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
   };
 
   useEffect(() => {
