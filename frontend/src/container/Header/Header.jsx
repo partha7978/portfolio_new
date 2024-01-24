@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Header.scss";
 import { AppWrap } from "../../wrapper";
 import { TypeAnimation } from "react-type-animation";
 import send from "../../assets/send.png";
+import { urlFor, client } from "../../client";
 
 const scaleVariants = {
   whileInView: {
@@ -18,10 +19,25 @@ const scaleVariants = {
 };
 
 function Header() {
+  const [headerData, setHeaderData] = useState([]);
+  const [skills, setSkills] = useState([]);
+  useEffect(() => {
+    const query = '*[_type == "header"]';
+    client.fetch(query).then((data) => {
+      setHeaderData(data[0]);
+      setSkills(data[0].headerSkill);
+      console.log(data);
+    });
+    setTimeout(() => {
+      // console.log(data);
+      console.log(skills, "s1kills");
+    }, 5000);
+  }, []);
+  
   return (
     <div className="app__header app__flex">
       <motion.div
-        whileInView={{ x: [+100, 0], opacity: [0, 1] }}
+        whileInView={{ y: [+100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
         className="app__header-info"
       >
@@ -31,11 +47,11 @@ function Header() {
               <p className="p-text">
                 Hello<span>👋</span>, I am
               </p>
-              <h1 className="head-text">Partha Sarathi muduli</h1>
+              <h1 className="head-text">{headerData.mainName}</h1>
             </div>
             <div className="app__flex subHead">
               <hr></hr>
-              <p className="head-subText">Frontend Engineer at Deloitte</p>
+              <p className="head-subText">{headerData.description}</p>
             </div>
             <div className="app__flex head-button">
               <a href="#contact" style={{ textDecoration: "none" }}>
@@ -101,19 +117,53 @@ function Header() {
                   stroke-width="0"
                   style={{ transition: "all 0.3s ease 0s" }}
                 ></path>
-                <image
-               // style={{
-                //   filter: "grayscale(80%)",
-               // }}
-                  x="0"
-                  y="-8"
-                  width="110%"
-                  height="110%"
-                  href={images.profileImg}
-                ></image>
+                {headerData.headerMainImage ? (
+                  <image
+                    // style={{
+                    //   filter: "grayscale(80%)",
+                    // }}
+                    x="0"
+                    y="-8"
+                    width="110%"
+                    height="110%"
+                    href={urlFor(headerData?.headerMainImage).url()}
+                  ></image>
+                ) : (
+                  <image
+                    x="0"
+                    y="-8"
+                    width="110%"
+                    height="110%"
+                    href={images.profileImg}
+                  ></image>
+                )}
               </g>
             </svg>
           </div>
+        </div>
+      </motion.div>
+      <motion.div
+        whileInView={{ y: [+100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.3 }}
+        className="header__skill-container"
+      >
+        <div
+        className="header__skill-text">
+          <p>Top Skills</p>
+        </div>
+        <div className="header_skill-badge">
+          {skills?.map((skill) => (
+            <div
+              className="app__flex header__skill-div"
+              key={skill.name}
+            >
+              <img
+                className="header_skill-img"
+                src={urlFor(skill).url()}
+                alt={skill.name}
+              />
+            </div>
+          ))}
         </div>
       </motion.div>
     </div>

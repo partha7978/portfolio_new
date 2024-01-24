@@ -19,7 +19,7 @@
   flex: 1;
   width: 100%;
   height: 100%;
-  flex-direction: row;
+  flex-direction: column;
   padding: 2rem;
 
   @media screen and (min-width: 2000px) {
@@ -133,7 +133,8 @@
       }
     }
     @media screen and (max-width: 550px) {
-      .badge-cmp, .tag-cmp {
+      .badge-cmp,
+      .tag-cmp {
         padding-right: 0;
       }
       h1 {
@@ -203,7 +204,11 @@
 
     @media screen and (max-width: 1200px) {
       width: 300px;
-      height: 300px;  
+      height: 300px;
+    }
+
+    @media screen and (max-width: 550px) {
+      margin: 4rem 0 0 0;
     }
   }
 
@@ -320,5 +325,78 @@
 
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
+  }
+}
+
+// header skill badge section
+.header__skill-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem;
+  // box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.1);
+
+  .header__skill-text > p {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .header_skill-badge {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    .header__skill-div {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      img {
+        width: 50%;
+        height: 50%;
+        @media screen and (max-width: 350px) {
+          width: 60%;
+          height: 60%;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px #fef4f5;
+      }
+
+      @media screen and (min-width: 2000px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @media screen and (max-width: 900px) {
+        width: 70px;
+        height: 70px;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 50px;
+        height: 50px;
+      }
+
+      @media screen and (max-width: 350px) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-top: 3rem;
   }
 }
