@@ -2,6 +2,11 @@ import React, { useState } from "react";
 
 import { HiOutlineHome } from "react-icons/hi";
 import { MdOutlineContactMail, MdWorkOutline } from "react-icons/md";
+import { AiOutlineHome } from "react-icons/ai";
+import { MdPersonOutline } from "react-icons/md";
+import { TbDeviceDesktopCode } from "react-icons/tb";
+import { IoCodeSlashSharp } from "react-icons/io5";
+import { FiSend } from "react-icons/fi";
 import { BsCodeSlash } from "react-icons/bs";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
@@ -53,31 +58,36 @@ const Navbar = () => {
       </nav>
 
       <nav className="app__navbar-menu">
-        <div className="menubar__icon">
-          <a href="#home">
-            <HiOutlineHome />
-          </a>
-
-          <span className="menubar__text">Menu</span>
-        </div>
-        <div className="menubar__icon">
-          <a href="#project">
-            <MdWorkOutline />
-          </a>
-          <span className="menubar__text">Work</span>
-        </div>
-        <div className="menubar__icon">
-          <a href="#skills">
-            <BsCodeSlash />
-          </a>
-          <span className="menubar__text">Skill</span>
-        </div>
-        <div className="menubar__icon">
-          <a href="#contact">
-            <MdOutlineContactMail />
-          </a>
-          <span className="menubar__text">Contact</span>
-        </div>
+        <a href="#home">
+          <div className="menubar__icon">
+            <AiOutlineHome />
+            <span className="menubar__text">Home</span>
+          </div>
+        </a>
+        <a href="#about">
+          <div className="menubar__icon">
+            <MdPersonOutline />
+            <span className="menubar__text">About</span>
+          </div>
+        </a>
+        <a href="#project">
+          <div className="menubar__icon">
+            <TbDeviceDesktopCode />
+            <span className="menubar__text">Project</span>
+          </div>
+        </a>
+        <a href="#skills">
+          <div className="menubar__icon">
+            <IoCodeSlashSharp />
+            <span className="menubar__text">Skill</span>
+          </div>
+        </a>
+        <a href="#contact">
+          <div className="menubar__icon">
+            <FiSend />
+            <span className="menubar__text">Contact</span>
+          </div>
+        </a>
       </nav>
     </>
   );
