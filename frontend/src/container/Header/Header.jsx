@@ -33,7 +33,7 @@ function Header() {
       console.log(skills, "s1kills");
     }, 5000);
   }, []);
-  
+
   return (
     <div className="app__header app__flex">
       <motion.div
@@ -61,27 +61,6 @@ function Header() {
                 </button>
               </a>
             </div>
-            {/* <div className="tag-cmp app__flex"> */}
-            {/* <p className="p-text ">I love </p> */}
-            {/* <TypeAnimation
-                preRenderFirstString={true}
-                sequence={[
-                  500,
-                  "Web Development",
-                  500,
-                  "React.js",
-                  500,
-                  "Open Source",
-                  500,
-                  "Gaming",
-                ]}
-                speed={{ type: "keyStrokeDelayInMs", value: 70 }}
-                repeat={Infinity}
-                className="p-text typed-text"
-              /> */}
-            {/* <p className="p-text">Web Developer</p>
-            <p className="p-text">Competitive Coder</p> */}
-            {/* </div> */}
           </div>
           <div className="header__image">
             <svg
@@ -117,7 +96,7 @@ function Header() {
                   stroke-width="0"
                   style={{ transition: "all 0.3s ease 0s" }}
                 ></path>
-                {headerData.headerMainImage ? (
+                {headerData.headerMainImage && (
                   <image
                     // style={{
                     //   filter: "grayscale(80%)",
@@ -128,14 +107,6 @@ function Header() {
                     height="110%"
                     href={urlFor(headerData?.headerMainImage).url()}
                   ></image>
-                ) : (
-                  <image
-                    x="0"
-                    y="-8"
-                    width="110%"
-                    height="110%"
-                    href={images.profileImg}
-                  ></image>
                 )}
               </g>
             </svg>
@@ -143,26 +114,28 @@ function Header() {
         </div>
       </motion.div>
       <motion.div
-        whileInView={{ y: [+100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: [0, 100, -100, -100, -100, -100, 0] }}
+        // whileInView={{ y: [+100, 0], opacity: [0, 1] }}
+        transition={{ duration: 1, ease: "backInOut", delay: 0.7 }}
         className="header__skill-container"
       >
-        <div
-        className="header__skill-text">
+        <div className="header__skill-text">
           <p>Top Skills</p>
         </div>
         <div className="header_skill-badge">
           {skills?.map((skill) => (
-            <div
-              className="app__flex header__skill-div"
-              key={skill.name}
+            <motion.div className="app__flex header__skill-div" key={skill.name}
+              initial={{ opacity: 0, y: 200, rotate: "0deg" }}
+              animate={{ opacity: 1, y: [0, 100, -100, -100, -100, -100, 0], rotate: "1440deg" }}
+              transition={{ duration: 2, ease: "backInOut", delay: 0.7 }}
             >
               <img
                 className="header_skill-img"
                 src={urlFor(skill).url()}
                 alt={skill.name}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
