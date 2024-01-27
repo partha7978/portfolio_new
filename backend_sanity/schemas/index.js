@@ -1,11 +1,11 @@
 import abouts from "./abouts"
 import brands from "./brands"
 import contact from "./contact"
-import experiences from "./experiences"
 import skills from "./skills"
-import workExperience from "./workExperience"
 import works from "./works"
 import testimonials from "./testimonials"
 import header from "./header"
+import experience from "./experience"
+import education from "./education"
 
-export const schemaTypes = [header, abouts, brands, contact, experiences, skills, workExperience, works, testimonials]
+export const schemaTypes = [header, abouts, brands, contact, experience, skills, works, education, testimonials]
