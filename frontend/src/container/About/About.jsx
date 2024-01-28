@@ -16,7 +16,7 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        My <span> Experience</span> Section
+        My <span>Work Experience</span> Section
       </h2>
 
       <motion.div
