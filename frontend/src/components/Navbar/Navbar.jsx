@@ -22,14 +22,19 @@ const Navbar = () => {
           <span className="logo">Partha</span>
         </div>
         <ul className="app__navbar-links">
-          {["Home", "About", "Project", "Skills", "Testimonial", "Contact"].map(
-            (item) => (
-              <li className="app__flex p-text" key={`link-${item}`}>
-                <div />
-                <a href={`#${item.toLowerCase()}`}>{item}</a>
-              </li>
-            )
-          )}
+          {[
+            "Home",
+            "Career",
+            "Project",
+            "Skills",
+            "Testimonial",
+            "Contact",
+          ].map((item) => (
+            <li className="app__flex p-text" key={`link-${item}`}>
+              <div />
+              <a href={`#${item.toLowerCase()}`}>{item}</a>
+            </li>
+          ))}
         </ul>
 
         {/* <div className="app__navbar-menu">
@@ -64,10 +69,10 @@ const Navbar = () => {
             <span className="menubar__text">Home</span>
           </div>
         </a>
-        <a href="#about">
+        <a href="#career">
           <div className="menubar__icon">
-            <MdPersonOutline />
-            <span className="menubar__text">About</span>
+            <MdWorkOutline />
+            <span className="menubar__text">Career</span>
           </div>
         </a>
         <a href="#project">
