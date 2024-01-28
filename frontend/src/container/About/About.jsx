@@ -61,7 +61,7 @@ const About = () => {
                       initial={{ opacity: 0, y: 0 }}
                       whileInView={{
                         opacity: 1,
-                        x: [+200, 0],
+                        x: [+50, 0],
                         rotate: "2880deg",
                       }}
                       whileHover={{ scale: 1.1 }}
