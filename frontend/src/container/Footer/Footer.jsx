@@ -19,8 +19,6 @@ const Footer = () => {
   const { name, email, message } = formData;
 
   useEffect(() => {
-    console.log(emailValid, "email valid");
-    console.log(messageValid, "message valid");
     !messageValid || !emailValid
       ? setShowErrorMessage(
           `Enter a valid ${!emailValid ? "email" : ""} 

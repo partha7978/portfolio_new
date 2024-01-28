@@ -26,12 +26,7 @@ function Header() {
     client.fetch(query).then((data) => {
       setHeaderData(data[0]);
       setSkills(data[0].headerSkill);
-      console.log(data);
     });
-    setTimeout(() => {
-      // console.log(data);
-      console.log(skills, "s1kills");
-    }, 5000);
   }, []);
 
   return (
@@ -71,8 +66,8 @@ function Header() {
             >
               <defs>
                 <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                  <stop id="stop1" stop-color="#030303" offset="0%"></stop>
-                  <stop id="stop2" stop-color="#6b7688" offset="100%"></stop>
+                  <stop id="stop1" stopColor="#030303" offset="0%"></stop>
+                  <stop id="stop2" stopColor="#6b7688" offset="100%"></stop>
                 </linearGradient>
               </defs>
               <mask id="mask" mask-type="alpha">
@@ -82,7 +77,7 @@ function Header() {
                   width="100%"
                   height="100%"
                   transform="translate(50 50)"
-                  stroke-width="0"
+                  strokeWidth="0"
                   style={{ transition: "all 0.3s ease 0s" }}
                 ></path>
               </mask>
@@ -93,7 +88,7 @@ function Header() {
                   width="100%"
                   height="100%"
                   transform="translate(50 50)"
-                  stroke-width="0"
+                  strokeWidth="0"
                   style={{ transition: "all 0.3s ease 0s" }}
                 ></path>
                 {headerData.headerMainImage && (
@@ -125,9 +120,15 @@ function Header() {
         </div>
         <div className="header_skill-badge">
           {skills?.map((skill) => (
-            <motion.div className="app__flex header__skill-div" key={skill.name}
+            <motion.div
+              className="app__flex header__skill-div"
+              key={skill._key}
               initial={{ opacity: 0, y: 200, rotate: "0deg" }}
-              animate={{ opacity: 1, y: [0, 100, -100, -100, -100, -100, 0], rotate: "1440deg" }}
+              animate={{
+                opacity: 1,
+                y: [0, 100, -100, -100, -100, -100, 0],
+                rotate: "1440deg",
+              }}
               transition={{ duration: 2, ease: "backInOut", delay: 0.7 }}
             >
               <img
