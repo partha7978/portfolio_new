@@ -101,6 +101,7 @@ function Header() {
                     width="110%"
                     height="110%"
                     href={urlFor(headerData?.headerMainImage).url()}
+                    alt="profile_bg"
                   ></image>
                 )}
               </g>
@@ -134,7 +135,7 @@ function Header() {
               <img
                 className="header_skill-img"
                 src={urlFor(skill).url()}
-                alt={skill.name}
+                alt={skill.altImage}
               />
             </motion.div>
           ))}

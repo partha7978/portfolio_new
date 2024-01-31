@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./About.scss";
+import "./Career.scss";
 import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -96,6 +96,6 @@ const About = () => {
 
 export default AppWrap(
   MotionWrap(About, "app__about"),
-  "career",
+  "careerssss",
   "app__primarybg"
 );

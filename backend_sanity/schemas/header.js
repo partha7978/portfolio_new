@@ -33,6 +33,14 @@ export default {
           options: {
             hotspot: true,
           },
+          fields: [
+            {
+              name: 'altImage',
+              title: 'Alt Image',
+              type: 'string',
+              description: 'Alternative text for the image',
+            },
+          ],
         },
       ],
     },
