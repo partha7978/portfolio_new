@@ -1,0 +1,242 @@
+.app__about {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+// .app__profiles {
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     flex-wrap: wrap;
+//     margin-top: 2rem;
+// }
+
+// .app__profile-item {
+//     width: 190px;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     flex-direction: column;
+//     margin: 2rem;
+
+//     img {
+//         width: 100%;
+//         height: 170px;
+//         border-radius: 15px;
+//         object-fit: cover;
+//     }
+
+//     @media screen and (min-width: 2000px) {
+//         width: 370px;
+//         margin: 2rem 4rem;
+
+//         img {
+//             height: 320px;
+//         }
+//     }
+// }
+
+.experience__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 3rem 0 1rem 0;
+  width: 100%;
+
+  .experience__content {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    width: 50%;
+    height: 60vh;
+    margin: 0 2rem;
+
+    .experience__details {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0px 0px 35px -3px rgba(0, 0, 0, 0.1);
+      position: relative;
+      // for experience content section small bar
+      .experience__bar {
+        position: absolute;
+        background-color: var(--gray-color);
+        width: 10px;
+        height: 0.2rem;
+        right: -22px;
+        top: 50%;
+
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+      }
+    }
+    // setting the experience bar of right side card
+    &:last-of-type > .experience__details > .experience__bar {
+      left: -22px;
+    }
+
+    .experience__header {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      // company name and position section
+      div {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 120px;
+          height: auto;
+        }
+      }
+      //   date section
+      h4 {
+        font-size: 0.8rem;
+        color: var(--gray-color);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 480px) {
+          text-align: right;
+        }
+      }
+    }
+    // top skills section
+    .topSkill__section {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+
+      span {
+        font-size: 0.8rem;
+        color: var(--gray-color);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+
+        @media screen and (max-width: 480px) {
+          width: 100%;
+        }
+      }
+
+      .topSkill__item {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+        img {
+          width: 55%;
+          height: 55%;
+          @media screen and (max-width: 480px) {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          width: 20px;
+          height: 20px;
+          margin-right: 0.5rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        flex-wrap: wrap;
+      }
+    }
+
+    // experience description section
+    .experience__desc {
+      margin: 1rem 0;
+      font-size: 0.8rem;
+      color: var(--gray-color);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      list-style: none;
+
+      li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 0.5rem;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          color: #000000;
+        }
+      }
+    }
+
+    // responsive design for the experience cards
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      height: 40vh;
+    }
+
+    @media screen and (max-width: 750px) {
+      width: 85%;
+      height: auto;
+      margin: 0 1rem 2rem 1rem;
+      // &:last-of-type {
+      //   margin-top: 3rem;
+      // }
+    }
+  }
+
+  .align-top {
+    align-self: flex-start;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1000px) {
+      align-self: center;
+      justify-content: center;
+    }
+  }
+
+  .align-bottom {
+    align-self: flex-end;
+    justify-content: flex-end;
+
+    @media screen and (max-width: 1000px) {
+      align-self: center;
+      justify-content: center;
+    }
+  }
+  //   vertical bar for separation
+  .bar {
+    width: 2px;
+    height: 100%;
+    background-color: var(--gray-color);
+
+    @media screen and (max-width: 1000px) {
+      height: 80px;
+    }
+
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+  }
+
+  // responsive design for the main container
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  // @media screen and (max-width: 750px) {
+  //   gap: 5rem;
+  // }
+}

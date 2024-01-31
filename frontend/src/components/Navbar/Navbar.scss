@@ -157,49 +157,71 @@
 // }
 
 .app__navbar-menu {
-  width: 100%;
+  width: 2rem;
+  height: 100%;
+  position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem 0.5rem 2rem;
-  background: #c1c4e6;
+  gap: 4rem;
+  flex-direction: column;
+  // padding: 1rem 2rem 0.5rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 12;
   bottom: 0;
   left: 0;
+  
+  a {
+    text-decoration: none;
+    outline: none;
+    padding: none;
+    margin: none;
+    transform: rotate(90deg);
+  }
 
   .menubar__icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row-reverse;
     outline: none;
-
-    a {
-      text-decoration: none;
-      outline: none;
-      padding: none;
-      margin: none;
-    }
-
+    transition: color 0.2s linear;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    margin: 0rem;
     svg {
-      width: 1.7rem;
-      height: 1.7rem;
-      color: #000;
-
-      @media screen and (max-width: 500px) {
-        width: 1.4rem;
-        height: 1.4rem;
-      }
+      width: 1.1rem;
+      height: 1.1rem;
+      color: var(--gray-color);
+      transform: rotate(180deg);
+      margin: 0 0.3rem;
     }
 
-    span {
+    span.menubar__text {
       font-size: 0.8rem;
+      transform: rotate(180deg);
+      color: var(--gray-color);
+      font-weight: 500;
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 700px) {
     display: none;
   }
+}
+
+.app__navbar-menu a:first-child .menubar__text, .app__navbar-menu a:first-child .menubar__icon > svg {
+  color: #000; /* Color for the first span */
+}
+.app__navbar-menu a:hover .menubar__text,
+.app__navbar-menu a:focus .menubar__text,
+.app__navbar-menu a:active .menubar__text,
+.app__navbar-menu a:hover .menubar__icon > svg,
+.app__navbar-menu a:focus .menubar__icon > svg,
+.app__navbar-menu a:active .menubar__icon > svg {
+  color: #000; /* Color when the span is hovered, focused, or active */
+  font-weight: 600;
 }

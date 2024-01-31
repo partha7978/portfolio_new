@@ -12,6 +12,8 @@ import javascript from '../assets/javascript.png'
 import react from '../assets/react.png'
 import html from '../assets/html.png'
 import profileImage from '../assets/profileImage.png'
+import profileImg from '../assets/profileImg.svg'
+import profileImg2 from '../assets/profileImg2.svg'
 
 export default {
     about1,
@@ -27,5 +29,7 @@ export default {
     javascript,
     react,
     html,
-    profileImage
+    profileImage,
+    profileImg,
+    profileImg2
 };

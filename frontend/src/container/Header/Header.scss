@@ -19,8 +19,8 @@
   flex: 1;
   width: 100%;
   height: 100%;
-  flex-direction: row;
-  padding: 6rem 2rem 0rem;
+  flex-direction: column;
+  padding: 2rem;
 
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
@@ -31,18 +31,20 @@
   }
 
   @media screen and (max-width: 450px) {
-    padding: 6rem 1rem 2rem;
+    padding: 8rem 1rem 2rem;
   }
 }
 
 .app__header-info {
-  flex: 0.65;
+  // flex: 0.65;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  margin: 0 2rem;
+  // margin: 0 2rem;
+  // margin-bottom: 5rem;
 
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -53,43 +55,132 @@
 .app__header-badge {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // flex-direction: column;
 
-  .badge-cmp,
-  .tag-cmp {
+  .badge-cmp {
     padding: 1rem 2rem;
-    background: var(--white-color);
     border-radius: 15px;
-    flex-direction: row;
+    flex-direction: column;
     width: auto;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: 550px) {
+      padding: 8rem 0 0 1.8rem;
+    }
   }
 
-  .tag-cmp {
-    flex-direction: row;
-    margin-top: 3rem;
-    font-weight: 800;
-    text-transform: uppercase;
-
-    // p {
-    //   width: 100%;
-    //   text-transform: uppercase;
-    //   text-align: right;
-    // }
-    
-    .typed-text {
-      font-size: 0.8rem;
-      margin-left: 2px;
-      text-align: left;
+  .badge-cmp {
+    h1 {
+      font-size: 3rem;
+    }
+    .p-text {
+      font-size: 1.2rem;
       color: var(--gray-color);
-      line-height: 1.5;
-      color: var(--secondary-color);
-    
-      @media screen and (min-width: 2000px) {
-        font-size: 1.75rem;
+      margin: 1rem 0;
+      span {
+        font-size: 1.5rem;
       }
+    }
+
+    //send button
+    .head-button {
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+
+      .p-text {
+        padding: 1rem 1.5rem;
+        line-height: 1;
+        border-radius: 13px;
+        outline: none;
+        font-size: 1rem;
+        border: 1px solid var(--gray-color);
+        background-color: var(--black-color);
+        color: var(--primary-color);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        .send-icon {
+          width: 1.2rem;
+          height: 1.2rem;
+          margin-left: 0.7rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      height: 55vh;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      .badge-cmp,
+      .tag-cmp {
+        padding-right: 0;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin: 0;
+      }
+    }
+    @media screen and (max-width: 390px) {
+      h1 {
+        text-align: left;
+        font-size: 1.8rem;
+      }
+    }
+    @media screen and (max-width: 350px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .subHead {
+    flex-direction: row;
+    width: 100%;
+    margin: 1rem 0;
+    justify-content: start;
+    align-items: center;
+    color: var(--gray-color);
+    hr {
+      width: 70px;
+      margin: 0 1rem 0 0;
+      border: 1px solid var(--gray-color);
+      @media screen and (max-width: 650px) {
+        width: 40px;
+      }
+    }
+  }
+
+  // header image
+  .header__image {
+    width: 400px;
+    height: 400px;
+
+    @media screen and (max-width: 1200px) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @media screen and (max-width: 550px) {
+      margin: 4rem 0 0 0;
     }
   }
 
@@ -102,105 +193,81 @@
   }
 
   @media screen and (max-width: 1200px) {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 }
 
-.app__header-circles {
-  flex: 0.75;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  height: 100%;
-  margin-left: 1rem;
-
-  div {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: var(--white-color);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-
-    img {
-      width: 60%;
-      height: 60%;
-    }
-  }
-
-  // circles with different height & width
-
-  div:nth-child(1) {
-    width: 100px;
-    height: 100px;
-  }
-
-  div:nth-child(2) {
-    margin: 1.75rem;
-    width: 150px;
-    height: 150px;
-  }
-
-  div:nth-child(3) {
-    width: 70px;
-    height: 70px;
-  }
-
-  @media screen and (min-width: 2000px) {
-    div:nth-child(2) {
-      width: 400px;
-      height: 400px;
-    }
-
-    div:nth-child(3) {
-      width: 170px;
-      height: 170px;
-    }
-
-    div:nth-child(1) {
-      width: 200px;
-      height: 200px;
-    }
-  }
-
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 0;
-
-    div {
-      margin: 1rem;
-    }
-  }
-}
-
-.app__header-img {
+// header skill badge section
+.header__skill-container {
   flex: 1;
-  height: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 0.5rem;
+  // box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.1);
 
-  img {
-    width: 100%;
-    object-fit: contain;
-    z-index: 1;
+  .header__skill-text > p {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
-  .overlay_circle {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
+  .header_skill-badge {
     width: 100%;
-    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    .header__skill-div {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      img {
+        width: 50%;
+        height: 50%;
+        @media screen and (max-width: 350px) {
+          width: 60%;
+          height: 60%;
+        }
+      }
+
+      @media screen and (min-width: 2000px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @media screen and (max-width: 900px) {
+        width: 70px;
+        height: 70px;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 50px;
+        height: 50px;
+      }
+
+      @media screen and (max-width: 350px) {
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 
-  @media screen and (max-width: 1200px) {
-    margin: 2rem 0;
+  @media screen and (max-width: 900px) {
+    margin-top: 3rem;
   }
 }
