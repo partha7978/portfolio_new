@@ -5,7 +5,7 @@ import { urlFor, client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const About = () => {
+const Career = () => {
   const [experience, setExperience] = useState([]);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const About = () => {
 };
 
 export default AppWrap(
-  MotionWrap(About, "app__about"),
-  "careerssss",
+  MotionWrap(Career, "app__about"),
+  "career",
   "app__primarybg"
 );
