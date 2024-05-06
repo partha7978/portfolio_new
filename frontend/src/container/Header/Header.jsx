@@ -4,7 +4,6 @@ import { images } from "../../constants";
 import "./Header.scss";
 import { AppWrap } from "../../wrapper";
 import { TypeAnimation } from "react-type-animation";
-import send from "../../assets/send.png";
 import { urlFor, client } from "../../client";
 
 const scaleVariants = {
@@ -52,7 +51,7 @@ function Header() {
               <a href="#contact" style={{ textDecoration: "none" }}>
                 <button className="p-text app__flex">
                   Say Hello
-                  <img src={send} alt="send" className="send-icon" />
+                  <img src={images.sendIcon} alt="send" className="send-icon" />
                 </button>
               </a>
             </div>
@@ -100,7 +99,7 @@ function Header() {
                     y="-8"
                     width="110%"
                     height="110%"
-                    href={urlFor(headerData?.headerMainImage).url()}
+                    href={images.profileImg}
                     alt="profile_bg"
                   ></image>
                 )}
