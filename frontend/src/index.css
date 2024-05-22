@@ -3,6 +3,7 @@
 :root {
   --font-base: 'DM Sans', sans-serif;
   --primary-color: #f9f2ed;
+  --primary-color-contrast: #FFEACE;
   /* else use edf2f8 as primary */
   --secondary-color: #313bac;
   --black-color: #030303;

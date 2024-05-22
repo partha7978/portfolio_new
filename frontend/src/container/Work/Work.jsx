@@ -44,7 +44,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["All", "React.js", "JavaScript"].map((item, index) => (
+        {["All", "Next JS", "React.js", "JavaScript"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -76,7 +76,12 @@ const Work = () => {
                 }}
                 className="app__work-hover app__flex"
               >
-                <a href={work.projectLink} target="_blank" rel="noreferrer" aria-label={`View ${work.title}`}>
+                <a
+                  href={work.projectLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`View ${work.title}`}
+                >
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -86,7 +91,12 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel="noreferrer" aria-label={`Source ${work.title}`}>
+                <a
+                  href={work.codeLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Source ${work.title}`}
+                >
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -101,16 +111,19 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
-              <p 
-              className="p-text" 
-              style={{ marginTop: 10 }}
-              data-tooltip-id="my-tooltip__work-description"
-              data-tooltip-content={work.description}
-              data-tooltip-place="bottom"
+              <p
+                className="p-text"
+                style={{ marginTop: 10 }}
+                data-tooltip-id="my-tooltip__work-description"
+                data-tooltip-content={work.description}
+                data-tooltip-place="bottom"
               >
                 {work.description.split("").splice(0, 70).join("")}...
               </p>
-              <ReactTooltip className="skills-tooltip" id="my-tooltip__work-description" />
+              <ReactTooltip
+                className="skills-tooltip"
+                id="my-tooltip__work-description"
+              />
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
