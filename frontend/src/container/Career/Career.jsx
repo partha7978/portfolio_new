@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoMdArrowRoundForward } from "react-icons/io";
+import { images } from "../../constants";
 
 const Career = () => {
   const [experience, setExperience] = useState([]);
@@ -80,8 +82,25 @@ const Career = () => {
                     </motion.div>
                   ))}
                 </div>
+                {experience.awards && (
+                  <div className="award__section">
+                    <span className="award">
+                      <span className="award__icon">
+                        <img src={images.starIcon} alt="award" />
+                      </span>
+                      {experience?.awards}
+                    </span>
+                  </div>
+                )}
                 <div className="experience__desc">
-                  <span>{experience?.desc}</span>
+                  {experience?.desc?.map((item, index) => (
+                    <div className="experience__item" key={item + index}>
+                      <div>
+                        <IoMdArrowRoundForward />{" "}
+                      </div>
+                      <p>{item}</p>
+                    </div>
+                  ))}
                 </div>
                 <div className="experience__bar"></div>
               </div>

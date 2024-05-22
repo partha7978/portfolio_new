@@ -24,6 +24,18 @@ export default {
     {
       name: 'desc',
       title: 'Desc',
+      type: 'array',
+      of: [
+        {
+          name: 'desc',
+          title: 'desc',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'awards',
+      title: 'Awards',
       type: 'string',
     },
     {
