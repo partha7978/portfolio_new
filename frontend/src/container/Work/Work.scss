@@ -38,6 +38,10 @@
         color: #fff;
     }
 
+    @media screen and (max-width: 750px) {
+       padding: 0 2rem;
+    }
+
 }
 
 .app__work-portfolio {
